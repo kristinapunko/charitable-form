@@ -2,17 +2,31 @@ import React from 'react';
 import { TextField, Fade, useTheme } from '@mui/material';
 import { useController } from 'react-hook-form';
 
-export const FormInput = ({ label, name, control, type = "text", delay = 0, fullWidth = true, helperText, 'aria-label': ariaLabel, ...props }) => {
+export const FormInput = ({ label, name, control, type = "text", delay = 0, fullWidth = true, helperText, 'aria-label': ariaLabel, nextFieldName, ...props }) => {
     const theme = useTheme();
     const {
         field,
         fieldState: { error },
     } = useController({ name, control });
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' && nextFieldName) {
+            event.preventDefault(); 
+            const nextInput = document.getElementsByName(nextFieldName);
+            if (nextInput.length > 0) {
+                nextInput[0].focus();
+            }
+        }
+        if (props.onKeyDown) {
+             props.onKeyDown(event);
+        }
+    };
+
     return (
         <Fade in timeout={500} style={{ transitionDelay: `${delay}ms` }}>
             <TextField
                 {...field}
+                onKeyDown={handleKeyDown}
                 fullWidth={fullWidth}
                 label={label}
                 type={type}

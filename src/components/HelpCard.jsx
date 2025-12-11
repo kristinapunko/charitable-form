@@ -39,10 +39,10 @@ const HelpOption = ({
         >
             <Box
                 sx={{
-                    width: { xs: '60px', lg: '80px' },
-                    height: { xs: '60px', lg: '80px' },
-                    minWidth: { xs: '60px', lg: '80px' },
-                    minHeight: { xs: '60px', lg: '80px' },
+                    width: { xs: '55px', lg: '80px' },
+                    height: { xs: '55px', lg: '80px' },
+                    minWidth: { xs: '55px', lg: '80px' },
+                    minHeight: { xs: '55px', lg: '80px' },
                     flexShrink: 0,
                     borderRadius: 3,
                     backgroundColor: active ? '#8b5fb5' : 'white',
@@ -50,7 +50,7 @@ const HelpOption = ({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    mr: 2,
+                    mr: { xs: 0.5, lg: 2},
                     transition: 'all 0.3s ease',
                 }}
             >
@@ -61,7 +61,7 @@ const HelpOption = ({
                 <Typography
                     variant="subtitle1"
                     sx={{
-                        fontWeight: 800,
+                        fontWeight: {xs: 600, lg: 800},
                         color: active ? '#2c3e50' : '#b3c3e7',
                         fontSize: { xs: '12px', lg: '18px' },
                         lineHeight: 1.2,

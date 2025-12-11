@@ -24,6 +24,7 @@ export default function PersonalDataForm({ control, errors }) {
                             control={control}
                             delay={100}
                             rules={{ required: "Ім'я обов'язкове" }}
+                            nextFieldName="lastName"
                         />
                     </Grid>
                     <Grid size={{ xs: 6 }}>
@@ -33,6 +34,7 @@ export default function PersonalDataForm({ control, errors }) {
                             control={control}
                             delay={150}
                             rules={{ required: "Фамілія обов'язкова" }}
+                            nextFieldName="company"
                         />
                     </Grid>
 
@@ -42,6 +44,7 @@ export default function PersonalDataForm({ control, errors }) {
                             name="company"
                             control={control}
                             delay={200}
+                            nextFieldName="email"
                         />
                     </Grid>
 
@@ -59,6 +62,7 @@ export default function PersonalDataForm({ control, errors }) {
                                     message: "Невірний формат email"
                                 }
                             }}
+                            nextFieldName="phone"
                         />
                     </Grid>
 
@@ -69,6 +73,7 @@ export default function PersonalDataForm({ control, errors }) {
                             type="tel"
                             control={control}
                             delay={250}
+                            nextFieldName="country"
                         />
                     </Grid>
                     
@@ -128,6 +133,7 @@ export default function PersonalDataForm({ control, errors }) {
                             name="country"
                             control={control}
                             delay={400}
+                            nextFieldName="city"
                         />
                     </Grid>
 
@@ -137,6 +143,7 @@ export default function PersonalDataForm({ control, errors }) {
                             name="city"
                             control={control}
                             delay={450}
+                            nextFieldName="state"
                         />
                     </Grid>
                     <Grid size={{ xs: 6 }}>
@@ -145,6 +152,7 @@ export default function PersonalDataForm({ control, errors }) {
                             name="state"
                             control={control}
                             delay={500}
+                            nextFieldName="address"
                         />
                     </Grid>
 
@@ -154,6 +162,7 @@ export default function PersonalDataForm({ control, errors }) {
                             name="address"
                             control={control}
                             delay={600}
+                            nextFieldName="postalCode"
                         />
                     </Grid>
 

@@ -254,7 +254,7 @@ export default function DonationForm() {
                 <Grid
                   container
                   spacing={1}
-                  sx={{ paddingLeft: 2 }}
+                  sx={{ paddingLeft: {lg:2} }}
                   id="help-options-container"
                   role="radiogroup"
                   aria-labelledby="help-types-heading"
