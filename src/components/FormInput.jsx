@@ -47,8 +47,8 @@ export const FormInput = ({ label, name, control, type = "text", delay = 0, full
                         backgroundColor: '#f5f7f9',
                         padding: '5px 10px',
 
-                        '&:before': { borderBottom: 'none' },
-                        '&:after': { borderBottom: 'none' },
+                        '&:before': { borderBottom: 'none !important' },
+                        '&:after': { borderBottom: 'none !important' },
 
                         transition: 'all 0.3s ease',
                         '&:hover': {

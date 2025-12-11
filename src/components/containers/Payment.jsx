@@ -49,7 +49,7 @@ const paymentMethods = [
   },
 ];
 
-export default function Payment({ arrowPosition, control, handleSubmit, onSubmit, errors, trigger}) {
+export default function Payment({ arrowPosition, control, handleSubmit, onSubmit, errors, trigger }) {
   const theme = useTheme();
   const [selectedMethod, setSelectedMethod] = useState(2);
   const [focusedMethod, setFocusedMethod] = useState(null);
@@ -90,24 +90,24 @@ export default function Payment({ arrowPosition, control, handleSubmit, onSubmit
             top: 0,
             width: 0,
             height: 0,
-            left: {lg: arrowPosition ? `${arrowPosition}px` : '134px'},
+            left: { lg: arrowPosition ? `${arrowPosition}px` : '134px' },
             transform: 'translate(-50%, -100%)',
             zIndex: 10,
 
           },
 
           '&::before': {
-            borderLeft: {lg: '15px solid transparent'}, 
-            borderRight: {lg: '15px solid transparent'}, 
-            borderBottom: {lg: `15px solid ${theme.palette.lightBorder.main}`}, 
+            borderLeft: { lg: '15px solid transparent' },
+            borderRight: { lg: '15px solid transparent' },
+            borderBottom: { lg: `15px solid ${theme.palette.lightBorder.main}` },
 
           },
 
           '&::after': {
-            transform: {lg : 'translate(-50%, -92%)'},
-            borderLeft: {lg: '15px solid transparent'}, 
-            borderRight: {lg: '15px solid transparent'}, 
-            borderBottom: {lg: '15px solid white'},
+            transform: { lg: 'translate(-50%, -92%)' },
+            borderLeft: { lg: '15px solid transparent' },
+            borderRight: { lg: '15px solid transparent' },
+            borderBottom: { lg: '15px solid white' },
           }
 
         }}
@@ -130,9 +130,9 @@ export default function Payment({ arrowPosition, control, handleSubmit, onSubmit
               Спосіб оплати
             </Typography>
 
-            <Grid 
-              container 
-              spacing={2} 
+            <Grid
+              container
+              spacing={2}
               justifyContent={{ xs: 'center', md: 'flex-start' }}
               role="group"
               aria-labelledby="payment-methods-heading"
@@ -142,8 +142,8 @@ export default function Payment({ arrowPosition, control, handleSubmit, onSubmit
                   item
                   xs={12}
                   sm={6}
-                  md={4}          
-                  lg={4}          
+                  md={4}
+                  lg={4}
                   key={method.id}
                 >
                   <Fade in timeout={400} style={{ transitionDelay: `${index * 50}ms` }}>
@@ -177,33 +177,40 @@ export default function Payment({ arrowPosition, control, handleSubmit, onSubmit
           </Grid>
 
           <Grid size={{ xs: 12, md: 6, lg: 5 }}>
-            <Typography
-              variant="h6"
-              sx={{
-                textAlign: { xs: 'center', md: 'left' },
-                fontFamily: 'var(--font-geometria)',
-                fontWeight: 600,
-                color: theme.palette.lightText.main,
-                fontSize: '14px',
-                letterSpacing: '0.5px',
-                mb: 2,
-              }}
-               id="payment-details-heading"
-            >
-              Введіть наступні дані
-            </Typography>
-
             <Fade in timeout={600} style={{ transitionDelay: '300ms' }}>
               <Box
                 sx={{
                   display: 'flex',
-                  justifyContent: { xs: 'center', md: 'flex-end' },
+                  flexDirection: 'column',
+                  alignItems: { xs: 'center', md: 'flex-end' },
                   width: '100%',
                 }}
               >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    textAlign: { xs: 'center', md: 'right' },
+                    width: { xs: '100%', sm: '330px' },
+                    maxWidth: '330px',
+                    fontFamily: 'var(--font-geometria)',
+                    fontWeight: 600,
+                    color: theme.palette.lightText.main,
+                    fontSize: '14px',
+                    letterSpacing: '0.5px',
+                    mb: 2,
+                    pr: { md: 4, sm: 0 },
+                    '@media (min-width: 900px)': {
+                      textAlign: 'left',
+                    },
+                  }}
+                  id="payment-details-heading"
+                >
+                  Введіть наступні дані
+                </Typography>
+
                 <Box
                   sx={{
-                    width: { xs: '100%', sm: '330px' }, 
+                    width: { xs: '100%', sm: '330px' },
                     maxWidth: '330px',
                     background: theme.palette.lightBorder.main,
                     borderRadius: 3,
@@ -278,13 +285,13 @@ export default function Payment({ arrowPosition, control, handleSubmit, onSubmit
 
                     <Box sx={{
                       display: 'flex',
-                      gap: { xs: 2, sm: 6 }, 
+                      gap: { xs: 2, sm: 6 },
                       mt: { xs: 1, md: 3 },
                     }}>
                       <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
-                        flex: { xs: '1 1 100%', sm: '1' } 
+                        flex: { xs: '1 1 100%', sm: '1' }
                       }}>
                         <Typography
                           variant="body2"
@@ -312,7 +319,7 @@ export default function Payment({ arrowPosition, control, handleSubmit, onSubmit
                       <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
-                        flex: { xs: '1 1 100%', sm: '1' } 
+                        flex: { xs: '1 1 100%', sm: '1' }
                       }}>
                         <Typography
                           variant="body2"

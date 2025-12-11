@@ -35,7 +35,7 @@ export const CardInput = ({
                     }
                     onChange={(e) => {
                         if (name === "expiry") {
-                            let val = e.target.value.replace(/[^\d]/g, ""); 
+                            let val = e.target.value.replace(/[^\d]/g, "");
                             if (val.length >= 2) {
                                 val = val.substring(0, 2) + "/" + val.substring(2);
 
@@ -86,6 +86,10 @@ export const CardInput = ({
                             borderRadius: 1,
                             height: { xs: 38, md: 38 },
                             padding: 0,
+
+                            '&:hover fieldset': {
+                                borderColor: '#8b5fb5 !important',
+                            },
                         },
                         '& .MuiOutlinedInput-input': {
                             color: '#2c3e50',

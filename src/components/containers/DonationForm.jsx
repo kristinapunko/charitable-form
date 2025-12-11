@@ -39,7 +39,25 @@ const schema = yup.object().shape({
   expiry: yup
     .string()
     .matches(/^(0[1-9]|1[0-2])\/\d{2}$/, "Формат MM/YY")
-    .required("Обов'язково"),
+    .required("Обов'язково")
+    .test('is-future-date', 'Термін закінчився', (value) => {
+      if (!value || value.length !== 5) return true;
+
+      const [month, yearString] = value.split('/');
+      const monthNumber = parseInt(month, 10);
+      const yearNumber = parseInt(yearString, 10);
+      
+      const currentYear = new Date().getFullYear() % 100;
+      const currentMonth = new Date().getMonth() + 1;
+
+      if (yearNumber < currentYear) {
+          return false;
+      }
+      if (yearNumber === currentYear && monthNumber < currentMonth) {
+          return false;
+      }
+      return true;
+  }),
 
   cvv: yup
     .string()
